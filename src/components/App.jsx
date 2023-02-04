@@ -1,16 +1,10 @@
+import { BlokButtonSelect } from "./feedback/Feedback";
+import { BoxFeedback } from "./App.stiled";
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <BoxFeedback>
+      <h2>Please leave feedback</h2>
+      <BlokButtonSelect></BlokButtonSelect>   
+    </BoxFeedback>
   );
 };
