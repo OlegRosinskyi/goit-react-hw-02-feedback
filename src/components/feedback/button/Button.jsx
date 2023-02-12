@@ -1,14 +1,21 @@
 //import PropTypes from 'prop-types';
 
 import { ButtonStyl } from "./Button.styled";
+import { ButtonStylActiv } from "./ButtonActiv.syiled";
+import { ButtonStylActivCirc } from "./ButtonActiv.syiled";
 
-const ButtonSingl = ({NameButtonOn,id}) =>
+const ButtonSingl = ({NameButton,id,activeStateHandler,buttonActiv}) =>
 {
+    //console.log(buttonActiv);
     return (
-        <ButtonStyl type="button" id={id} onClick={event => {
-            console.log("Increment button was clicked!", event);
-            console.log("this.props: ", event.target.id);
-        }}> {NameButtonOn} </ButtonStyl>
+        <> 
+            {(buttonActiv === NameButton) ? <><ButtonStylActiv type="button" id={id} onClick={activeStateHandler} value={id}> {NameButton} </ButtonStylActiv>
+                <ButtonStylActivCirc value={id}> </ButtonStylActivCirc></>
+            
+            : <><ButtonStyl type="button" id={id} onClick={activeStateHandler}> {NameButton} </ButtonStyl> </>}
+            
+               
+        </>
      )
 }
 export default ButtonSingl;
